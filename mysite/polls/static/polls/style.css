@@ -1,0 +1,72 @@
+body {
+    background-image: url('images/blurry_colors.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed; /* Optional: if you want the image to stay put while scrolling */
+}
+
+html, body {
+    height: 100%; /* Make sure the body takes up full viewport height */
+    margin: 0; /* Reset default margin */
+    display: flex; /* Establish flex container */
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center; /* Center children vertically */
+    align-items: center; /* Center children horizontally */
+    text-align: center; /* Ensure text is centered within children */
+    color: floralwhite;
+}
+
+button {
+    background-color: #169bcc; /* blue */
+    border: none;
+    color: floralwhite;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 4px;
+    font-family: "Courier New", monospace;
+    /*box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);*/
+}
+
+button:hover {
+    border: 1px solid floralwhite;
+}
+
+.back-button {
+    display: block; /* Display as a block-level element for full width */
+    margin-top: 10px; /* Add some spacing between the images and the button */
+    padding: 10px; /* Add padding for a comfortable button size */
+    background-color: #007bff; /* Blue background color */
+    color: white; /* White text color */
+    text-decoration: none; /* Remove underline from the hyperlink */
+    text-align: center; /* Center the text */
+    border-radius: 4px; /* Optional: Add rounded corners */
+}
+
+.back-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+textarea {
+    width: 100%;
+    height: 50px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 1px solid floralwhite;
+    border-radius: 4px;
+    background-color: floralwhite;
+    font-size: 16px;
+    resize: none;
+}
+
+form {
+    width: 100%; /* Full width to contain the textarea */
+    max-width: 600px; /* Maximum width of the form */
+    margin: 0 auto; /* Center form in the document */
+}
+
+.p1 {
+    font-family: "Courier New", monospace;
+}

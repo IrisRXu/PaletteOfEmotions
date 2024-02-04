@@ -1,0 +1,51 @@
+<!-- polls/templates/polls/user_input.html -->
+
+{% load static %}
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Polls</title>
+  <link rel="stylesheet" href="{% static 'polls/style.css' %}">
+</head>
+
+
+&#160
+
+{% block content %}
+<style>
+  /* Center the content */
+  .content {
+    text-align: center;
+  }
+
+  /* Style for the image */
+  img {
+    max-width: 50%;  /* Set image width to 50% of the viewport width */
+    height: auto;  /* Maintain aspect ratio */
+    display: block;  /* Treat the image as a block-level element */
+    margin: 20px auto;  /* Center the image horizontally */
+  }
+</style>
+
+<div class="content">
+  <h1></h1>
+  <p></p >
+
+  {% if dall_path %}
+  <!-- The image tag for displaying the generated image -->
+  <img src="{{ dall_path }}" alt="Dall Generated Image" class="">
+  {% else %}
+  <p>No image available.</p >
+  {% endif %}
+</div>
+
+<!-- updated: added retry link -->
+&#160
+<a href="{% url 'polls:index' %}" class="button">
+  <button type="submit"><b>Try again</b></button>
+</a>
+
+&#160
+
+{% endblock %}

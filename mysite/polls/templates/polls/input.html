@@ -1,0 +1,71 @@
+<!-- polls/templates/polls/user_input.html -->
+
+{% load static %}
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Polls</title>
+  <link rel="stylesheet" href="{% static 'polls/style.css' %}">
+</head>
+
+&#160
+
+
+
+{% block content %}
+<style>
+  /* Center the content */
+  .content {
+    text-align: center;
+  }
+
+  /* Style for the image */
+  img {
+      max-width: 50%;  /* Set image width to 50% of the viewport width */
+      height: auto;  /* Maintain aspect ratio */
+      display: block;  /* Treat the image as a block-level element */
+      margin: 20px auto;  /* Center the image horizontally and add some space above and below */
+  }
+
+  /* Style for the artwork title */
+  .artwork-title {
+      margin: 20px 20px 50px;
+      font-style: italic; /* Italicize the text */
+      font-size: 16px;
+  }
+
+</style>
+
+<div class="content">
+  <h1></h1>
+  <p></p >
+
+  {% if image_path %}
+
+  <!-- The image tag for displaying the generated image -->
+  <img src="{{ image_path }}" alt="Generated Image", class="met-image">
+
+ {% else %}
+ <p>No image available.</p >
+ {% endif %}
+</div>
+
+<!-- Display the title of the artwork -->
+<div class="artwork-title">{{ selected }}</div>
+
+<!-- updated: added retry link -->
+&#160
+<a href="{% url 'polls:index' %}" class="button">
+<button type="submit"><b>Try again</b></button>
+</a>
+
+<!-- updated: added dalle link -->
+&#160
+<a href="{% url 'polls:generated' %}" class="button">
+  <button type="submit"><b>Render with Dall-E</b></button>
+</a>
+
+&#160
+
+{% endblock %}

@@ -1,0 +1,38 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Polls</title>
+    <link rel="stylesheet" href="{% static 'polls/style.css' %}">
+</head>
+<body>
+
+<div id="loadingIndicator" style="display: none; position: fixed; top: 0; width: 100%; background: rgba(0,0,0,0.5); color: white; text-align: center;">
+    Waiting for your emotion palette to be generated...
+</div>
+
+<h1 class = "p1">Welcome to Palette of Emotions!</h1>
+<h2 class = "p1">How are you feeling today?</h2>
+
+<form action="{% url 'polls:input' %}" method="post" id="userInputForm">
+    {% csrf_token %}
+    <textarea name="user_text" id="user_text" rows="4" cols="50" required></textarea><br>
+    <button type="submit"><b>Submit</b></button>
+</form>
+
+<!-- Loading Message -->
+<div id="loadingMessage" style="display: none; position: fixed; top: 0; left: 50%; transform: translateX(-50%); z-index: 100; background-color: rgba(255, 255, 255, 0.8); padding: 10px; font_size: 24px">
+    Waiting for your emotion palette to be generated...
+</div>
+
+<script>
+    document.getElementById('userInputForm').onsubmit = function() {
+        document.getElementById('loadingIndicator').style.display = 'block';
+    };
+</script>
+
+</body>
+</html>
